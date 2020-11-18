@@ -13,3 +13,7 @@ header h1 {
     color: white;
     text-align: justify;
 }
+
+.aside {
+    height: 92vh;
+}

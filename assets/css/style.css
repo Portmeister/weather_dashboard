@@ -24,10 +24,30 @@ header h1 {
     border: 3px solid blue;
 }
 
+#uvIndex {
+    border-bottom: 3px solid blue;
+}
+
+#forecast {
+    margin: 10px;
+}
+
+#block {
+    display: block;
+    width: 100%;
+}
+
 .primary {
     background-color: red;
     padding: 5px;
     color: white;
     font-weight: bold;
     font-size: .75rem;
+}
+
+.secondary {
+    background-color: blue;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
 }

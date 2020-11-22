@@ -35,7 +35,7 @@ var dayFiveTemp = $("<p>");
 var dayFiveHumid = $("<p>");
 
 var printCity = function (name) {
-  var listEl = $('<li>');
+  var listEl = $('<li><button>');
   var listDetail = name;
   listEl.addClass('list-group-item').text(listDetail);
   listEl.appendTo(cityListEl);
@@ -62,7 +62,7 @@ var handleFormSubmit = function (event) {
   }).then(function(response) {
     console.log(response);
     cityTitle.text(response.name + " " + moment().format("MMM Do YYYY")).appendTo(cityDisplay);
-    cityTemp.text("Temperature: " + ((response.main.temp - 273.15) * 9/5 + 32).toFixed(2) + "°F").appendTo(cityDisplay);
+    cityTemp.text("Temperature: " + ((response.main.temp - 273.15) * 9/5 + 32).toFixed(0) + "°F").appendTo(cityDisplay);
     cityHumid.text("Humidity: " + response.main.humidity + "%").appendTo(cityDisplay);
     cityWind.text("Wind Speed: " + response.wind.speed).appendTo(cityDisplay);
 
@@ -89,11 +89,11 @@ var handleFormSubmit = function (event) {
             method: "GET"
           }).then(function(response) {
             console.log(response);
-            dayOne.append(dayOneDate.text(moment().add(1, 'days').format('dddd')), dayOneTemp.text("Temp: " + ((response.list[5].main.temp - 273.15) * 9/5 + 32).toFixed(2) + "°F"), dayOneHumid.text("Humidity: " + response.list[5].main.humidity + "%"));
-            dayTwo.append(dayTwoDate.text(moment().add(2, 'days').format('dddd')), dayTwoTemp.text("Temp: " + ((response.list[13].main.temp - 273.15) * 9/5 + 32).toFixed(2) + "°F"), dayTwoHumid.text("Humidity: " + response.list[13].main.humidity + "%"));
-            dayThree.append(dayThreeDate.text(moment().add(3, 'days').format('dddd')), dayThreeTemp.text("Temp: " + ((response.list[21].main.temp - 273.15) * 9/5 + 32).toFixed(2) + "°F"), dayThreeHumid.text("Humidity: " + response.list[21].main.humidity + "%"));
-            dayFour.append(dayFourDate.text(moment().add(4, 'days').format('dddd')), dayFourTemp.text("Temp: " + ((response.list[29].main.temp - 273.15) * 9/5 + 32).toFixed(2) + "°F"), dayFourHumid.text("Humidity: " + response.list[29].main.humidity + "%"));
-            dayFive.append(dayFiveDate.text(moment().add(5, 'days').format('dddd')), dayFiveTemp.text("Temp: " + ((response.list[37].main.temp - 273.15) * 9/5 + 32).toFixed(2) + "°F"), dayFiveHumid.text("Humidity: " + response.list[37].main.humidity + "%"));
+            dayOne.append(dayOneDate.text(moment().add(1, 'days').format('dddd')), dayOneTemp.text("Temp: " + ((response.list[5].main.temp - 273.15) * 9/5 + 32).toFixed(0) + "°F"), dayOneHumid.text("Humidity: " + response.list[5].main.humidity + "%"));
+            dayTwo.append(dayTwoDate.text(moment().add(2, 'days').format('dddd')), dayTwoTemp.text("Temp: " + ((response.list[13].main.temp - 273.15) * 9/5 + 32).toFixed(0) + "°F"), dayTwoHumid.text("Humidity: " + response.list[13].main.humidity + "%"));
+            dayThree.append(dayThreeDate.text(moment().add(3, 'days').format('dddd')), dayThreeTemp.text("Temp: " + ((response.list[21].main.temp - 273.15) * 9/5 + 32).toFixed(0) + "°F"), dayThreeHumid.text("Humidity: " + response.list[21].main.humidity + "%"));
+            dayFour.append(dayFourDate.text(moment().add(4, 'days').format('dddd')), dayFourTemp.text("Temp: " + ((response.list[29].main.temp - 273.15) * 9/5 + 32).toFixed(0) + "°F"), dayFourHumid.text("Humidity: " + response.list[29].main.humidity + "%"));
+            dayFive.append(dayFiveDate.text(moment().add(5, 'days').format('dddd')), dayFiveTemp.text("Temp: " + ((response.list[37].main.temp - 273.15) * 9/5 + 32).toFixed(0) + "°F"), dayFiveHumid.text("Humidity: " + response.list[37].main.humidity + "%"));
             cityForecastDisplay.append(dayOne, dayTwo, dayThree, dayFour, dayFive);
           });
 

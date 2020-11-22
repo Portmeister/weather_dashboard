@@ -12,8 +12,8 @@ The following image demonstrates the application functionality:
 ![weather dashboard demo](./assets/images/06-server-side-apis-homework-demo.png)
 
 # Deployment:
-- URL of the deployed application:
-- URL of the GitHub repository with unique name and includes a README describing project:
+- URL of the deployed application: https://portmeister.github.io/weather_dashboard/
+- URL of the GitHub repository with unique name and includes a README describing project: https://github.com/Portmeister/weather_dashboard
 
 # Contributors:
 All code developed by Carrol W. Porter (Portmeister).
